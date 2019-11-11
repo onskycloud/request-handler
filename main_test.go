@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	requestHandler "github.com/nguyencatpham/request-handler"
+	requestHandler "github.com/onskycloud/request-handler"
 )
 
 type TestData struct {
