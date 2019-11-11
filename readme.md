@@ -1,8 +1,8 @@
 # Request Handler
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://github.com/nguyencatpham/request-handler)
+[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://github.com/onskycloud/request-handler)
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/nguyencatpham/request-handler)
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/onskycloud/request-handler)
 
 Request handler is a package extend from net/http. It provides HTTP client and server implementations easier.
   - Get, Head, Post, and PostForm make HTTP (or HTTPS) requests
@@ -29,7 +29,7 @@ Request handler requires [Go](https://golang.org/) v1.11+ to run.
 Install the package.
 
 ```sh
-$ go get github.com/nguyencatpham/request-handler
+$ go get github.com/onskycloud/request-handler
 ```
 
 #### Kubernetes + Google Cloud
