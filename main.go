@@ -133,3 +133,33 @@ func Delete(requestModel RequestModel, result *interface{}) error {
 	requestModel.Type = "DELETE"
 	return Base(requestModel, result)
 }
+
+// GetV2 request
+func GetV2(requestModel RequestModel, result interface{}) error {
+	requestModel.Type = "GET"
+	return Base(requestModel, &result)
+}
+
+// PostV2 request
+func PostV2(requestModel RequestModel, result interface{}) error {
+	requestModel.Type = "POST"
+	return Base(requestModel, &result)
+}
+
+// PutV2 request
+func PutV2(requestModel RequestModel, result interface{}) error {
+	requestModel.Type = "PUT"
+	return Base(requestModel, &result)
+}
+
+// PatchV2 request
+func PatchV2(requestModel RequestModel, result interface{}) error {
+	requestModel.Type = "PATCH"
+	return Base(requestModel, &result)
+}
+
+// DeleteV2 request
+func DeleteV2(requestModel RequestModel, result interface{}) error {
+	requestModel.Type = "DELETE"
+	return Base(requestModel, &result)
+}
