@@ -17,6 +17,7 @@ type TokenType int8
 const (
 	Basic = iota
 	Bearer
+	Other
 )
 
 func (s TokenType) String() string {
@@ -25,21 +26,23 @@ func (s TokenType) String() string {
 		return "Basic"
 	case Bearer:
 		return "Bearer"
+	case Other:
+		return "Other"
 	default:
-		return "Bearer"
+		return "Other"
 	}
-	return "Bearer"
 }
 
 // RequestModel model
 type RequestModel struct {
-	URL       string
-	TokenType TokenType
-	Token     string
-	Username  string
-	Password  string
-	Body      string
-	Type      string
+	URL         string
+	TokenType   TokenType
+	Token       string
+	Username    string
+	Password    string
+	Body        string
+	Type        string
+	ContentType string
 }
 
 // Base request
@@ -57,6 +60,11 @@ func Base(requestModel RequestModel, result *interface{}) error {
 		req.Header.Set("Authorization", header)
 		req.Header.Add("Content-Type", "application/json")
 	default:
+		if requestModel.ContentType == "" {
+			requestModel.ContentType = "application/json"
+		}
+		req.Header.Set("Authorization", requestModel.Token)
+		req.Header.Add("Content-Type", requestModel.ContentType)
 		break
 	}
 	req.Header.Add("Accept", "application/json")
