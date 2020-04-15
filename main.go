@@ -45,6 +45,13 @@ type RequestModel struct {
 	ContentType string
 }
 
+// SimpleResponse response
+type SimpleResponse struct {
+	Status  int
+	Message string
+	Body    interface{}
+}
+
 // Base request
 func Base(requestModel RequestModel, result *interface{}) error {
 
